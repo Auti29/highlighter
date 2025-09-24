@@ -1,10 +1,9 @@
 "use client";
-
-import { useState } from "react";
+import useSnippet from "@/hooks/useSnippet";
 import Heading from "./Heading";
 
 export default function InputCode() {
-    const [snippet, setSnippet] = useState<string>("");
+    const { snippet, setSnippet } = useSnippet();
     return (
         <div className="w-[23%] h-full">
         <Heading text="Paste your code here..." />

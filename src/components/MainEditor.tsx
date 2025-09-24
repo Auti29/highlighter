@@ -1,7 +1,11 @@
+"use client";
+
+import useSnippet from "@/hooks/useSnippet";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function MainEditor(){
+    const { snippet } = useSnippet();
     return(
         <div className="w-[50%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md">
             <div className="w-[90%] pt-5 pb-5 border-0 rounded-md flex justify-center items-center bg-gray-400">
@@ -11,7 +15,7 @@ export default function MainEditor(){
             language="javascript" style={atomOneDark}
             showLineNumbers={true}
             >
-{`import React from 'react';
+{snippet ||  `import React from 'react';
 
 export default function App() {
     return (
