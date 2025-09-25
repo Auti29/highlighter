@@ -8,7 +8,7 @@ export default function OptionSelector({label, values}: OptionSelectorInterface)
 
     return (
         <div className="pl-1 mb-2 font-bold flex justify-between items-center">
-                <span className="font-bold text-[13px] text-gray-500">{label}</span>
+                <span className="font-bold text-[13px] text-gray-700">{label}</span>
                 <div className=" flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm w-38">
                    {
                     values &&

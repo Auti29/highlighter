@@ -12,7 +12,7 @@ export default function FrameOptions() {
                 <OptionSelector label="Radius" values={["0", "10", "20", "30"]} />
                 <OptionSelector label="Visible" values={["Yes", "No"]} />
                 <div className="pl-1 mb-2 flex justify-between items-center">
-                    <span className="text-[13px] font-bold text-gray-500">Background</span>
+                    <span className="text-[13px] font-bold text-gray-700">Background</span>
                     <div className="flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm w-38">
                         <input type="color" className="flex-1"/>
                     </div>
