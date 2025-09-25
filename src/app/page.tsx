@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex flex-col h-screen w-screen overflow-hidden">
       <NavBar />
 
-      <div className="flex-1 flex justify-between pl-10 pr-10 pt-2 pb-2 items-center ">
+      <div className="flex-1 flex justify-between pl-15 pr-15 pt-2 pb-2 items-center ">
        <SideBar />
        <SnippetContextProvider>
        <MainEditor />

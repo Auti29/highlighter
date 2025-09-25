@@ -1,7 +1,11 @@
+import FrameOptions from "./FrameOptions";
+
 export default function EditOptions(){
     return(
-        <div className="w-full h-full">
-            edit options
+        <div className="w-full h-full border border-gray-400 rounded-md p-2">
+            <div className="border-b-2 border-gray-300 pb-2">
+            <FrameOptions />
+            </div>
         </div>
     )
 }

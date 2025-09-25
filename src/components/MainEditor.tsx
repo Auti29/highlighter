@@ -28,10 +28,10 @@ useEffect(() => {
 }, []);
   
     return(
-        <div className="w-[50%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md">
+        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md">
             <div className="w-[90%] pt-5 pb-5 border-0 rounded-md flex justify-center items-center bg-blue-400">
             <div className="w-[90%] border-3 border-black rounded-2xl bg-black">
-            <div className={`w-full  h-10 rounded-t-2xl flex items-center border-t-3 border-l-3 border-r-3 border-gray-500`}
+            <div className={`w-full  h-13 rounded-t-2xl flex items-center border-t-3 border-l-3 border-r-3 border-gray-500`}
             style={
                 { backgroundColor: topBarBg || "#1f2937" }
             }
