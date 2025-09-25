@@ -1,13 +1,25 @@
 "use client";
+import { useFrame } from "@/hooks/useFrame";
 import {useSnippet} from "../hooks/useSnippet";
 import { getRgb } from "@/utils/getRgb";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import SyntaxHighlighter, { SyntaxHighlighterProps } from "react-syntax-highlighter";
 import { agate, ascetic, atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Style } from "util";
+
+enum borderRadEnum {
+    "N/A"= "0", 
+    "S"= "10", 
+    "M"="20", 
+    "L"="30"
+}
+
+
 
 export default function MainEditor(){
+    const {frame,} = useFrame();
     const [topBarBg, setTopBarBg] = useState<string>("");
-    const [currStyle, setCurrStyle] = useState<{[key: string]: CSSProperties;}>(atomOneDark);
+    const [currStyle, ] = useState<{[key: string]: CSSProperties;}>(atomOneDark);
     const { snippet } = useSnippet();
     const highlighterRef = useRef<HTMLDivElement>(null);
     
@@ -23,13 +35,25 @@ useEffect(() => {
         });
         const darkerBg = `rgb(${newRgb[0]}, ${newRgb[1]}, ${newRgb[2]})`;
         setTopBarBg(darkerBg);
-        console.log(darkerBg);
+        // console.log(darkerBg);
     }
 }, []);
   
     return(
         <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md bg-gray-100">
-            <div className="w-[90%] pt-5 pb-5 border-0 rounded-md flex justify-center items-center bg-blue-400">
+            <div 
+            className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center"
+            style={frame ?
+                {
+                    paddingLeft: (Number(frame.padding)*4).toString() + "px",  
+                    paddingRight:  (Number(frame.padding)*4).toString() + "px", 
+                    borderRadius: frame.radius ? borderRadEnum[frame.radius as keyof typeof borderRadEnum] + "px" : "0px", 
+                    background: frame.visible === "No"  ?  "none" : frame.background!, 
+                } 
+                : 
+                undefined
+            }
+            >
             <div className="w-[90%] border-3 border-black rounded-2xl bg-black">
             <div className={`w-full  h-11 rounded-t-2xl flex items-center border-r-3  border-gray-400`}
             style={

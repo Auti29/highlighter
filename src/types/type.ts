@@ -7,10 +7,10 @@ export type SnippetType = {
 
 
 export interface FrameInterface  {
-    visible?: string | null, 
-    padding?: string | null,
-    radius?: string | null, 
-    background?: string | null 
+    visible?: string , 
+    padding?: string ,
+    radius?: string , 
+    background?: string  
 }
 
 export type FrameType = {

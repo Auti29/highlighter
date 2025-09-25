@@ -1,16 +1,16 @@
 "use client";
 
 import { FrameInterface, FrameType } from "@/types/type";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const FrameContext = createContext<FrameType | undefined>(undefined);
 
 export default function FrameContextProvider({children}:{children:React.ReactNode}){
     const [frame, setFrame] = useState<FrameInterface>({
-        padding: null, 
-        radius: null, 
-        visible: null, 
-        background: null, 
+        padding: "10", 
+        radius: "M", 
+        visible: "Yes", 
+        background: "#2b7fff", 
 
     });
 
