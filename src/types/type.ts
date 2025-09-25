@@ -7,13 +7,13 @@ export type SnippetType = {
 
 
 export interface FrameInterface  {
-    visible?: boolean, 
-    padding?: number,
-    radius?: number, 
-    background?: string 
+    visible?: string | null, 
+    padding?: string | null,
+    radius?: string | null, 
+    background?: string | null 
 }
 
 export type FrameType = {
     frame: FrameInterface | undefined, 
-    setFrame: Dispatch<SetStateAction<FrameInterface | undefined>> , 
+    setFrame: Dispatch<SetStateAction<FrameInterface>> , 
 };

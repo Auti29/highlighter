@@ -1,10 +1,29 @@
-"use client"
+"use client";
+
+import { FrameInterface } from "@/types/type";
+import { useState } from "react";
+
 interface OptionSelectorInterface {
-    label: string;
-    values: string[];
+    label: string, 
+    values: string[],  
+    selected?: string | null, 
+    setSelected?: (val: FrameInterface ) => void , 
+    frame?: FrameInterface,
 }
 
-export default function OptionSelector({label, values}: OptionSelectorInterface) {
+export default function OptionSelector({label, values, selected, setSelected, frame}: OptionSelectorInterface) {
+
+    const handleClick: (val: string)  => void = (val: string) =>  {
+        if(selected === val) return;
+        const curr = {...frame};
+        for(const key of Object.keys(curr) as (keyof FrameInterface)[]){
+            if(key === label.toLowerCase()) {
+                curr[key] = val;
+                break;
+            }
+        }
+        setSelected?.(curr);
+    }
 
     return (
         <div className="pl-1 mb-2 font-bold flex justify-between items-center">
@@ -15,6 +34,7 @@ export default function OptionSelector({label, values}: OptionSelectorInterface)
                     values.map((value, index) => {
                         return (
                                  <button
+                                 onClick={() => handleClick(value)}
                                  key={index}
                                   className="text-center p-1 flex-1 border-0 cursor-pointer hover:text-white hover:bg-gray-500 rounded-md text-gray-700">{value}</button>
                         )
