@@ -1,15 +1,22 @@
-import { FaRegMoon } from "react-icons/fa";
+"use client";
+
 import GithubIcon from "./icons/GithubIcon";
-import { IoMoonOutline } from "react-icons/io5";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import Link from "next/link";
+import { useTheme } from "@/hooks/useTheme";
 
 
 export default function NavIcons(){
+    const {theme , toggleTheme} = useTheme();
     return(
-        <div className="flex justify-center items-center px-2"> 
-            <div className="p-1.5 mr-2 hover:bg-gray-300 rounded-md cursor-pointer">
-            <IoMoonOutline size={20}/>
-            </div>
+        <div className="flex justify-center items-center px-2 "> 
+            <button
+            onClick={() => {
+                toggleTheme();
+            }}
+            className="p-1.5 mr-2 hover:bg-gray-300 rounded-md cursor-pointer">
+            {theme === "dark" ? <IoMoonOutline size={20}/> : <IoSunnyOutline size={20}/>}
+            </button>
             <Link href={"https://github.com/Auti29/highlighter"} target="__black">
             <GithubIcon />
             </Link>

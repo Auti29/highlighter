@@ -40,7 +40,7 @@ useEffect(() => {
 }, []);
   
     return(
-        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md bg-gray-100">
+        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md ">
             <div 
             className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center"
             style={frame ?

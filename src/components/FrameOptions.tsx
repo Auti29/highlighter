@@ -18,7 +18,7 @@ export default function FrameOptions() {
                 <OptionSelector label="Radius" values={["N/A", "S", "M", "L"]} selected= {frame?.radius} setSelected={setFrame} frame={frame}/>
                 <OptionSelector label="Visible" values={["Yes", "No"]} selected = {frame?.visible} setSelected={setFrame} frame={frame}/>
                 <div className="pl-1 mb-2 flex justify-between items-center">
-                    <span className="text-[13px] font-semibold text-gray-700">Background</span>
+                    <span className="text-[13px] font-semibold text-black">Background</span>
                     <div className="flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm w-38">
                         <input type="color" 
                         value={frame?.background}

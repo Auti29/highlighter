@@ -26,7 +26,7 @@ export default function OptionSelector({label, values, selected, setSelected, fr
 
     return (
         <div className="pl-1 mb-2 font-bold flex justify-between items-center">
-                <span className="font-semibold text-[13px] text-gray-700">{label}</span>
+                <span className="font-semibold text-[13px] text-black">{label}</span>
                 <div className=" flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm w-38">
                    {
                     values &&
@@ -35,7 +35,7 @@ export default function OptionSelector({label, values, selected, setSelected, fr
                                  <button
                                  onClick={() => handleClick(value)}
                                  key={index}
-                                  className="text-center p-1 flex-1 border-0 cursor-pointer hover:text-white hover:bg-gray-500 rounded-md text-gray-700 ml-0.5 mr-0.5"
+                                  className="text-center p-1 flex-1 border-0 cursor-pointer hover:text-white hover:bg-gray-500 rounded-md text-black ml-0.5 mr-0.5"
                                   style={selected === value ?
                                 {
                                     background: "black", 

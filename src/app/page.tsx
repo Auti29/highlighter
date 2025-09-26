@@ -1,13 +1,16 @@
+
 import InputCode from "@/components/InputCode";
 import MainEditor from "@/components/MainEditor";
 import NavBar from "@/components/NavBar";
 import SideBar from "@/components/SideBar";
 import SnippetContextProvider from "@/context/SnippetContext";
 import FrameContextProvider from "@/context/FrameContext";
+import ThemeContextProvider from "@/context/ThemeContext";
 
 
 export default function Home() {
   return (
+
     <div className="flex flex-col h-screen w-screen overflow-hidden">
       <NavBar />
 
