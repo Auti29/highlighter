@@ -10,8 +10,7 @@ import ThemeContextProvider from "@/context/ThemeContext";
 
 export default function Home() {
   return (
-
-    <div className="flex flex-col h-screen w-screen overflow-hidden">
+    <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
       <NavBar />
 
       <div className="flex-1 flex justify-between pl-15 pr-15 pt-2 pb-2 items-center ">

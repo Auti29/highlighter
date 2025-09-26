@@ -40,7 +40,7 @@ useEffect(() => {
 }, []);
   
     return(
-        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md ">
+        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0]">
             <div 
             className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center"
             style={frame ?
@@ -55,7 +55,7 @@ useEffect(() => {
             }
             >
             <div className="w-[90%] border-3 border-black rounded-2xl bg-black">
-            <div className={`w-full  h-11 rounded-t-2xl flex items-center border-r-3  border-gray-400`}
+            <div className={`w-full  h-11 rounded-t-2xl flex items-center border-r-3  border-gray-300`}
             style={
                 { backgroundColor: topBarBg || "#1f2937" }
             }
@@ -71,7 +71,7 @@ useEffect(() => {
             className={`w-full`}>
 
             <SyntaxHighlighter
-            className="w-full border-b-3  border-r-3  border-gray-400 rounded-b-2xl"
+            className="w-full border-b-3  border-r-3  border-gray-300 rounded-b-2xl"
             language="javascript" 
             customStyle={{
                 paddingBottom: "20px",
