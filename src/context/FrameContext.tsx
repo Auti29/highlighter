@@ -1,7 +1,7 @@
 "use client";
 
 import { FrameInterface, FrameType } from "@/types/type";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const FrameContext = createContext<FrameType | undefined>(undefined);
 

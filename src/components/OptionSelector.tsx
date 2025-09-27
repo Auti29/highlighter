@@ -1,5 +1,4 @@
 "use client";
-
 import { FrameInterface } from "@/types/type";
 
 interface OptionSelectorInterface {
@@ -7,21 +6,22 @@ interface OptionSelectorInterface {
     values: string[],  
     selected?: string | null, 
     setSelected?: (val: FrameInterface ) => void , 
-    frame?: FrameInterface,
+    state?: FrameInterface,
+    
 }
 
-export default function OptionSelector({label, values, selected, setSelected, frame}: OptionSelectorInterface) {
+export default function OptionSelector({label, values, selected, setSelected, state}: OptionSelectorInterface) {
 
     const handleClick: (val: string)  => void = (val: string) =>  {
         if(selected === val) return;
-        const curr = {...frame};
-        for(const key of Object.keys(curr) as (keyof FrameInterface)[]){
-            if(key === label.toLowerCase()) {
-                curr[key] = val;
-                break;
+        const curr = {...state};
+            for(const key of Object.keys(curr) as (keyof FrameInterface)[]){
+                if(key === label.toLowerCase()) {
+                    curr[key] = val;
+                    break;
+                }
             }
-        }
-        setSelected?.(curr);
+            setSelected?.(curr);
     }
 
     return (
@@ -35,10 +35,13 @@ export default function OptionSelector({label, values, selected, setSelected, fr
                                  <button
                                  onClick={() => handleClick(value)}
                                  key={index}
-                                  className="text-center p-1 flex-1 border-0 cursor-pointer hover:text-white hover:bg-gray-500 rounded-md text-black ml-0.5 mr-0.5 dark:text-gray-300"
+                                  className="text-center p-1 flex-1 border-0 cursor-pointer hover:text-white hover:bg-gray-500 rounded-md text-black ml-0.5 mr-0.5 dark:text-gray-300 "
                                   style={selected === value ?
                                 {
-                                    background: localStorage.getItem('theme') === 'dark' ? "gray" :"black", 
+                                    background: typeof window !== "undefined" && localStorage.getItem("theme") === "dark"
+                                        ? "#404040"
+                                        : "black",
+
                                     color: "white"
                                   } :undefined}
                                   >{value}</button>
