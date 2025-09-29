@@ -25,6 +25,6 @@ export default function DropDownItem({val, selected, label, setDropDown}:{val:st
     return(
         <span
         onClick={() => handleSelection(val)}
-        className="w-[90%] rounded-md my-1 px-2 py-2 hover:bg-[#404040] hover:text-white cursor-pointer">{val}</span>
+        className="w-[95%] rounded-md my-1 px-2 py-2 hover:bg-[#404040] hover:text-white cursor-pointer">{val}</span>
     );
 }

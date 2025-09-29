@@ -4,6 +4,7 @@ import { useState } from "react";
 import CustomDropDown from "./ui/CustomDropDown";
 import { HiArrowsRightLeft } from "react-icons/hi2";
 import { CodeInterface } from "@/context/CodeContext";
+import { CgOptions } from "react-icons/cg";
 
 
 interface SelectOptionsI {
@@ -24,11 +25,11 @@ export default function SelectOptions({label, values, selected, setCodeStyles, s
             <div className="relative">
             <div
             onClick={() => setDropDown(prev => !prev)} 
-            className="cursor-pointer flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm w-38 dark:bg-[#232323] dark:text-white">
+            className="cursor-pointer flex items-center justify-between py-2 px-2 rounded-md bg-gray-300 text-sm w-38 dark:bg-[#232323] dark:text-white">
                     <span>{
                             selected
                         }</span>
-                        <HiArrowsRightLeft size={17}/>
+                        <CgOptions  size={17}/>
                     
             </div>
                     {   

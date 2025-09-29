@@ -2,11 +2,10 @@
 import { createContext, ReactNode, useState } from "react"
 
 export interface CodeInterface {
-    style: string, 
-    showLineNumbers: string, 
-    showHeader: string, 
+    themes: string, 
+    linenumbers: string, 
+    header: string, 
     shadow: string, 
-    fontSize: string, 
     language: string
 }
 
@@ -19,11 +18,10 @@ export const CodeContext = createContext<CodeType | undefined>(undefined);
 
 export default function CodeContextProvider({children}: {children: ReactNode}) {
     const [codeStyles, setCodeStyles] = useState<CodeInterface>({
-        style: "atomOneDark", 
-        showLineNumbers: "yes", 
-        showHeader: "yes", 
+        themes: "codedarkDark", 
+        linenumbers: "show", 
+        header: "show", 
         shadow: "M", 
-        fontSize: "10", 
         language: "javascript"
     });
 

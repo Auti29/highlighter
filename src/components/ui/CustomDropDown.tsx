@@ -9,7 +9,7 @@ interface DropDownI {
 
 export default function CustomDropDown({values, selected, label, setDropDown}: DropDownI) {
     return(
-        <div className="flex flex-col items-center absolute right-0 left-0 top-8 m-auto w-38 h-40 bg-gray-300 text-sm dark:bg-[#282828] dark:text-white overflow-auto rounded-md">
+        <div className="flex flex-col items-center absolute right-0 left-0 top-8 m-auto w-42 h-40 bg-gray-300 text-sm dark:bg-[#282828] dark:text-white overflow-auto rounded-md z-50 ">
 
         {
             values.map((val, i) => {
