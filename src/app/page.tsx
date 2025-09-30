@@ -6,10 +6,13 @@ import SideBar from "@/components/SideBar";
 import SnippetContextProvider from "@/context/SnippetContext";
 import FrameContextProvider from "@/context/FrameContext";
 import CodeContextProvider from "@/context/CodeContext";
+import ToastProvider from "@/context/ToastContext";
 
 
 export default function Home() {
   return (
+    <ToastProvider>
+
     <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
       <NavBar />
 
@@ -29,5 +32,6 @@ export default function Home() {
         </CodeContextProvider>
       </div>
     </div>
+    </ToastProvider>
   );
 }

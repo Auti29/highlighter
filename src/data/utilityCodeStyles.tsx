@@ -48,14 +48,14 @@ export const utilityCodeStyles: CodeInterface[] =
     header: "hide",
     linenumbers: "no",
     themes: "solarizedlight",
-    shadow: "yes",
+    shadow: "show",
     language: "javascript"
     },
     {
     header: "hide",
     linenumbers: "no",
     themes: "materialDark",
-    shadow: "yes",
+    shadow: "show",
     language: "javascript"
     }
     ,
@@ -63,7 +63,7 @@ export const utilityCodeStyles: CodeInterface[] =
     header: "hide",
     linenumbers: "no",
     themes: "lucario",
-    shadow: "yes",
+    shadow: "show",
     language: "javascript"
     }
     ,
@@ -71,7 +71,7 @@ export const utilityCodeStyles: CodeInterface[] =
     header: "hide",
     linenumbers: "no",
     themes: "solarizedDarkAtom",
-    shadow: "yes",
+    shadow: "show",
     language: "javascript"
     }
 ]

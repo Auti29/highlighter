@@ -2,11 +2,11 @@
 import { useFrame } from "@/hooks/useFrame";
 import {useSnippet} from "../hooks/useSnippet";
 import { getRgb } from "@/utils/getRgb";
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import { useCodeContext } from "@/hooks/useCode";
 import { themeMappings } from "@/data/themeMappings";
-import { coldarkDark, xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import UtilityBar from "./UtilityBar";
 
 
@@ -26,6 +26,8 @@ export default function MainEditor(){
     const [boxBg, setBoxBg] = useState<string>("");
     const { snippet } = useSnippet();
     const highlighterRef = useRef<HTMLDivElement>(null);
+    const codeElemRef = useRef<HTMLDivElement>(null);
+
     
 useEffect(() => {
     const pre = highlighterRef.current?.querySelector("pre");
@@ -47,7 +49,8 @@ useEffect(() => {
 
     return(
         <div className="relative w-[53%] h-full flex flex-col justify-center items-center overflow-auto border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0]">
-            <div 
+            <div
+            ref={codeElemRef}
             className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center "
             style={frame ?
                 {
@@ -105,7 +108,7 @@ export default function App() {
             </div>
             </div>
 
-            <UtilityBar />
+            <UtilityBar codeElemRef={codeElemRef}/>
         </div>
     )
 }
