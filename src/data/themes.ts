@@ -19,6 +19,4 @@ export const themes = [
     "okaidia",
     "nord",
     "lucario",
-    "coyWithoutShadows",
-    "cb"
 ]

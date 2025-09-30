@@ -14,7 +14,7 @@ export default function CodeOptions(){
     return (
          <div className="w-full  pl-2 pr-1 flex flex-col">
                 <div className="flex mt-2">
-                <HeadingSecondary text={"Code"}/>
+                <HeadingSecondary text={"Editor"}/>
 
                 </div>
                 <div className="ml-3  flex flex-col mt-2 ">
@@ -22,7 +22,7 @@ export default function CodeOptions(){
                     <SelectOptions label={"Themes"} values={themes} selected={codeStyles.themes} setCodeStyles={setCodeStyles} state={codeStyles}/>
                     <OptionSelector<CodeInterface> label="LineNumbers" values={["show", "hide"]} selected={codeStyles.linenumbers} setSelected={setCodeStyles} state={codeStyles}/>
                     <OptionSelector<CodeInterface> label="Header" values={["show", "hide"]} selected={codeStyles.header} setSelected={setCodeStyles} state={codeStyles}/>
-                    <OptionSelector<CodeInterface> label="Shadow" values={["N/A", "S", "M", "L"]} selected={codeStyles.shadow} setSelected={setCodeStyles} state={codeStyles}/>
+                    <OptionSelector<CodeInterface> label="Shadow" values={["show", "hide"]} selected={codeStyles.shadow} setSelected={setCodeStyles} state={codeStyles}/>
                     
                 </div>
         </div>

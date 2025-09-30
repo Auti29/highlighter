@@ -7,6 +7,7 @@ import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import { useCodeContext } from "@/hooks/useCode";
 import { themeMappings } from "@/data/themeMappings";
 import { coldarkDark, xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
+import UtilityBar from "./UtilityBar";
 
 
 enum borderRadEnum {
@@ -40,50 +41,55 @@ useEffect(() => {
         setBoxBg(`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
         console.log(darkerBg);
         setTopBarBg(darkerBg);
+
     }
 }, [codeStyles.themes]);
 
     return(
-        <div className="w-[53%] h-full flex justify-center items-center overflow-auto border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0]">
+        <div className="relative w-[53%] h-full flex flex-col justify-center items-center overflow-auto border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0]">
             <div 
-            className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center"
+            className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center "
             style={frame ?
                 {
                     paddingLeft: (Number(frame.padding)*4).toString() + "px",  
                     paddingRight:  (Number(frame.padding)*4).toString() + "px", 
                     borderRadius: frame.radius ? borderRadEnum[frame.radius as keyof typeof borderRadEnum] + "px" : "0px", 
                     background: frame.visible === "No"  ?  "none" : frame.background!, 
+                    
                 } 
                 : 
                 undefined
             }
             >
-            <div className="w-[90%] rounded-2xl bg-none flex flex-col justify-center">
+            <div className={`w-[90%] bg-none flex flex-col justify-center `}>
             <div
             ref = {highlighterRef}
             className="w-full flex-1">
-                <div className={`w-full  h-11 rounded-t-2xl flex items-center `}
-            style={
-                { backgroundColor: topBarBg || "#1f2937" }
-            }
-            >
-                <div className="w-15 h-fit flex justify-between ml-3">
-                    <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-red-500"></span>
-                    <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-yellow-500"></span>
-                    <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-green-500"></span>
-                </div>
-            </div>
+                {codeStyles.header === "show" &&
+                <div className={`w-full  h-11 rounded-t-2xl flex items-center pl-3`}
+                style={
+                    { backgroundColor: topBarBg || "#1f2937" }
+                }
+                >
+                    <div className="w-15 h-fit flex justify-between ml-3">
+                        <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-red-500"></span>
+                        <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-yellow-500"></span>
+                        <span className="w-4 h-4 max-sm:w-2 max-sm:h-2 rounded-full bg-green-500"></span>
+                    </div>
+                </div>}
             <SyntaxHighlighter      
             customStyle={{
-                    borderRadius: "0 0 8px 8px", 
+                    boxShadow: codeStyles.shadow === "show" ? "2px 8px 8px -4px rgba(0, 0, 0, 0.2), 0 15px 20px -4px rgba(0, 0, 0, 0.4)": undefined, 
+                    borderRadius: codeStyles.header === "show" ? "0 0 15px 15px" : "15px 15px 15px 15px", 
                     margin: "0px", 
-                                        padding: "10px 35px 10px 10px",
-                    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4)',
+                    padding: codeStyles.linenumbers === "show" ? "10px 35px 10px 15px" : "10px 35px 10px 20px",
+                    border: "none",
+                    
                 }}
   
             language={codeStyles.language.toLowerCase() || "javascript"}
             style={themeMappings[codeStyles.themes] || coldarkDark}
-            showLineNumbers={true}
+            showLineNumbers={codeStyles.linenumbers === "show" ? true : false}
             >
 {snippet ||  `import React from 'react';
 
@@ -93,12 +99,13 @@ export default function App() {
         <h1>Hello, world!</h1>
         </div>
     );
-}
-                `}
+}`}
             </SyntaxHighlighter>
             </div>
             </div>
             </div>
+
+            <UtilityBar />
         </div>
     )
 }

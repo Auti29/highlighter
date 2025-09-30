@@ -6,7 +6,7 @@ export interface CodeInterface {
     linenumbers: string, 
     header: string, 
     shadow: string, 
-    language: string
+    language: string, 
 }
 
 export type CodeType = {
@@ -21,8 +21,8 @@ export default function CodeContextProvider({children}: {children: ReactNode}) {
         themes: "codedarkDark", 
         linenumbers: "show", 
         header: "show", 
-        shadow: "M", 
-        language: "javascript"
+        shadow: "show", 
+        language: "javascript", 
     });
 
     return(
