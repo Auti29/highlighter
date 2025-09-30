@@ -23,6 +23,7 @@ export default function CodeOptions(){
                     <OptionSelector<CodeInterface> label="LineNumbers" values={["show", "hide"]} selected={codeStyles.linenumbers} setSelected={setCodeStyles} state={codeStyles}/>
                     <OptionSelector<CodeInterface> label="Header" values={["show", "hide"]} selected={codeStyles.header} setSelected={setCodeStyles} state={codeStyles}/>
                     <OptionSelector<CodeInterface> label="Shadow" values={["show", "hide"]} selected={codeStyles.shadow} setSelected={setCodeStyles} state={codeStyles}/>
+                    <OptionSelector<CodeInterface> label="Watermark" values={["show", "hide"]} selected={codeStyles.watermark} setSelected={setCodeStyles} state={codeStyles}/>
                     
                 </div>
         </div>

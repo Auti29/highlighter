@@ -7,6 +7,7 @@ export interface CodeInterface {
     header: string, 
     shadow: string, 
     language: string, 
+    watermark: string
 }
 
 export type CodeType = {
@@ -23,6 +24,7 @@ export default function CodeContextProvider({children}: {children: ReactNode}) {
         header: "show", 
         shadow: "show", 
         language: "javascript", 
+        watermark: "show"
     });
 
     return(

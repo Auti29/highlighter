@@ -1,5 +1,4 @@
 export const themes = [
-    "coy",
     "coldarkDark",
     "nightOwl",
     "materialLight",

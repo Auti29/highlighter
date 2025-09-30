@@ -8,6 +8,7 @@ import { useCodeContext } from "@/hooks/useCode";
 import { themeMappings } from "@/data/themeMappings";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import UtilityBar from "./UtilityBar";
+import Logo from "./Logo";
 
 
 enum borderRadEnum {
@@ -23,7 +24,7 @@ export default function MainEditor(){
     const {frame,} = useFrame();
     const {codeStyles, } = useCodeContext();
     const [topBarBg, setTopBarBg] = useState<string>("");
-    const [boxBg, setBoxBg] = useState<string>("");
+    const [, setBoxBg] = useState<string>("");
     const { snippet } = useSnippet();
     const highlighterRef = useRef<HTMLDivElement>(null);
     const codeElemRef = useRef<HTMLDivElement>(null);
@@ -67,7 +68,7 @@ useEffect(() => {
             <div className={`w-[90%] bg-none flex flex-col justify-center `}>
             <div
             ref = {highlighterRef}
-            className="w-full flex-1">
+            className="w-full flex-1 relative">
                 {codeStyles.header === "show" &&
                 <div className={`w-full  h-11 rounded-t-2xl flex items-center pl-3`}
                 style={
@@ -85,7 +86,7 @@ useEffect(() => {
                     boxShadow: codeStyles.shadow === "show" ? "2px 8px 8px -4px rgba(0, 0, 0, 0.2), 0 15px 20px -4px rgba(0, 0, 0, 0.4)": undefined, 
                     borderRadius: codeStyles.header === "show" ? "0 0 15px 15px" : "15px 15px 15px 15px", 
                     margin: "0px", 
-                    padding: codeStyles.linenumbers === "show" ? "10px 35px 10px 15px" : "10px 35px 10px 20px",
+                    padding: codeStyles.linenumbers === "show" ? "10px 35px 30px 15px" : "10px 35px 30px 20px",
                     border: "none",
                     
                 }}
@@ -104,6 +105,20 @@ export default function App() {
     );
 }`}
             </SyntaxHighlighter>
+            {codeStyles.watermark === "show" &&
+            <div className="w-fit h-fit absolute m-auto bottom-1 right-1.5 opacity-60 ">
+                <div className="flex items-center justify-center w-fit p-1">
+                    <div className="mr-1 size-5 rounded-full bg-gradient-to-b from-rose-100
+                        via-pink-400
+                        to-purple-500">
+                    </div>
+                        <span className={`text-md font-bold text-gray-500`}>
+                                highlighter
+                        </span>
+                </div>
+
+            </div>
+            }
             </div>
             </div>
             </div>
