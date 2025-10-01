@@ -9,7 +9,7 @@ export default function InputCode() {
     return (
         <div className="w-[23%] h-full ">
         <Heading text="Paste your code here..." />
-         <div className="h-full w-full flex justify-center ">
+         <div className="h-[90%] w-full flex justify-center ">
             <textarea
             spellCheck={false}
             tabIndex={-1}
