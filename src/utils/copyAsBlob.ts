@@ -1,5 +1,5 @@
 import * as htmlToImage from 'html-to-image';
-import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { toBlob } from 'html-to-image';
 
 
 export const copyAsBlob = async (elem: HTMLElement) => {
