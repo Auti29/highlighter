@@ -66,10 +66,10 @@ useEffect(() => {
                 undefined
             }
             >
-            <div className={`w-[90%] bg-none flex flex-col justify-center `}>
+            <div className={`w-[90%] bg-none flex flex-col justify-center`}>
             <div
             ref = {highlighterRef}
-            className="w-full flex-1 relative ">
+            className="w-full flex-1 relative">
                 {codeStyles.header === "show" &&
                 <div className={`w-full  h-11 rounded-t-2xl flex items-center pl-3`}
                 style={
