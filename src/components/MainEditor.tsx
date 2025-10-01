@@ -50,7 +50,7 @@ useEffect(() => {
 
     return(
         <div className="relative w-[53%] h-full flex flex-col justify-center items-center overflow-hidden border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0] py-5">
-            <div className="w-full h-[90%]  flex justify-center items-center overflow-auto">
+            <div className="w-full h-[90%]  flex justify-center items-center overflow-auto bg-transparent">
             <div
             ref={codeElemRef}
             className="w-[90%] py-20 border-0 rounded-md flex justify-center items-center "
@@ -69,7 +69,7 @@ useEffect(() => {
             <div className={`w-[90%] bg-none flex flex-col justify-center `}>
             <div
             ref = {highlighterRef}
-            className="w-full flex-1 relative overflow-auto">
+            className="w-full flex-1 relative ">
                 {codeStyles.header === "show" &&
                 <div className={`w-full  h-11 rounded-t-2xl flex items-center pl-3`}
                 style={
