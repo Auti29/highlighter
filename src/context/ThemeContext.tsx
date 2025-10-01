@@ -13,7 +13,7 @@ type themeType = {
 export const ThemeContext = createContext<themeType | undefined>(undefined);
 
 export default function ThemeContextProvider({children} : {children: ReactNode}){
-    const [theme, setTheme] = useState<Theme>("light");
+    const [theme, setTheme] = useState<Theme>("dark");
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme') as Theme | null;
