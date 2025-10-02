@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FrameContextProvider from "@/context/FrameContext";
 import ThemeContextProvider from "@/context/ThemeContext";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         >
         <ThemeContextProvider>
         {children}
+        <Analytics />
       </ThemeContextProvider>
       </body>
     </html>
