@@ -7,7 +7,7 @@ export default function InputCode() {
     const { snippet, setSnippet } = useSnippet();
     const textAreaRef = useRef(null);
     return (
-        <div className="w-[23%] h-full ">
+        <div className="w-[23%] h-full lg:block md:hidden">
         <Heading text="Paste your code here..." />
          <div className="h-[90%] w-full flex justify-center ">
             <textarea

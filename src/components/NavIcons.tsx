@@ -4,12 +4,17 @@ import GithubIcon from "./icons/GithubIcon";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useTheme } from "@/hooks/useTheme";
+import { FaRegPaste } from "react-icons/fa6";
 
 
 export default function NavIcons(){
     const {theme , toggleTheme} = useTheme();
     return(
         <div className="flex justify-center items-center px-2 dark:text-white"> 
+            <button className="flex px-2 items-center justify-center py-0.5 border dark:border-gray-600 rounded-md cursor-pointer dark:bg-[#232323] bg-gray-300 mr-2 font-semibold  lg:hidden">
+                <FaRegPaste className="text-sm mr-1"/>
+                <span className="text-xs text-center mb-0.5">paste code</span>
+            </button>
             <button
             onClick={() => {
                 toggleTheme();

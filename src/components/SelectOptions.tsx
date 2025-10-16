@@ -20,13 +20,13 @@ export default function SelectOptions({label, values, selected, setCodeStyles, s
     const [dropDown, setDropDown] = useState<boolean>(false);
 
     return(
-        <div className="pl-1 mb-2.5 font-semibold flex justify-between items-center">
+        <div className="xl:pl-1 lg:pl-0.5 mb-2.5 font-semibold flex justify-between items-center">
             <span className="font-semibold text-[13px] text-black dark:text-white">{label}</span>
             <div className="relative">
             <div
             onClick={() => setDropDown(prev => !prev)} 
-            className="cursor-pointer flex items-center justify-between py-2 px-2 rounded-md bg-gray-300 text-sm w-38 dark:bg-[#232323] dark:text-white">
-                    <span>{
+            className="cursor-pointer flex items-center justify-between py-2 px-2 rounded-md bg-gray-300 text-sm md:w-30 lg:w-32 xl:w-38 dark:bg-[#232323] dark:text-white">
+                    <span className="w-[85%] overflow-clip">{
                             selected
                         }</span>
                         <CgOptions  size={17}/>

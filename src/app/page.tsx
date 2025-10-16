@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
       <NavBar />
 
-      <div className="flex-1 flex justify-between pl-15 pr-15 pt-2 pb-2 items-center ">
+      <div className="flex-1 flex justify-between px-15 md:px-5 xl:px-15 pt-2 pb-2 items-center 2xl:w-full ">
         <CodeContextProvider>
 
         <FrameContextProvider>
