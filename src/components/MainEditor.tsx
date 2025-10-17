@@ -49,7 +49,7 @@ useEffect(() => {
 }, [codeStyles.themes]);
 
     return(
-        <div className="relative md:w-[68%] lg:w-[50%] xl:w-[53%] h-full flex flex-col justify-center items-center overflow-hidden border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0] py-5">
+        <div className="relative m-auto md:w-[95%] lg:w-[50%] xl:w-[53%] h-full flex flex-col justify-center items-center overflow-hidden border border-gray-300 rounded-md dark:bg-[#0f0f10] dark:border-[#2e2f2ff0] py-5">
             <div className="w-full h-[90%]  flex justify-center items-center overflow-auto bg-transparent">
             <div
             ref={codeElemRef}

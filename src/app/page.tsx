@@ -7,31 +7,37 @@ import SnippetContextProvider from "@/context/SnippetContext";
 import FrameContextProvider from "@/context/FrameContext";
 import CodeContextProvider from "@/context/CodeContext";
 import ToastProvider from "@/context/ToastContext";
+import InputSideBar from "@/components/InputSideBar";
+import InputSidebarProvider from "@/context/InputSidebarContext";
 
 
 export default function Home() {
   return (
     <ToastProvider>
+      <InputSidebarProvider>
 
-    <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
-      <NavBar />
+        <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
+          <NavBar />
 
-      <div className="flex-1 flex justify-between px-15 md:px-5 xl:px-15 pt-2 pb-2 items-center 2xl:w-full ">
-        <CodeContextProvider>
+            <div className="flex-1 flex justify-between px-15 md:px-5 xl:px-15 pt-2 pb-2 items-center 2xl:w-full ">
+              <CodeContextProvider>
+                <FrameContextProvider>
 
-        <FrameContextProvider>
+                  <SideBar />
+                    <SnippetContextProvider>
+                      <MainEditor />
 
-       <SideBar />
-       <SnippetContextProvider>
-       <MainEditor />
+                      <InputSideBar />
+                      <div className="w-[23%] h-full md:hidden lg:block">
+                      <InputCode />
+                      </div>
 
-       <InputCode />
-
-       </SnippetContextProvider>
-      </FrameContextProvider>
-        </CodeContextProvider>
-      </div>
-    </div>
+                    </SnippetContextProvider>
+                </FrameContextProvider>
+              </CodeContextProvider>
+            </div>
+        </div>
+      </InputSidebarProvider>
     </ToastProvider>
   );
 }
