@@ -9,13 +9,14 @@ import CodeContextProvider from "@/context/CodeContext";
 import ToastProvider from "@/context/ToastContext";
 import InputSideBar from "@/components/InputSideBar";
 import InputSidebarProvider from "@/context/InputSidebarContext";
+import EditSidebarProvider from "@/context/EditSidebar";
 
 
 export default function Home() {
   return (
     <ToastProvider>
       <InputSidebarProvider>
-
+      <EditSidebarProvider>
         <div className="flex flex-col h-screen w-screen overflow-hidden dark:bg-[#151516]">
           <NavBar />
 
@@ -37,6 +38,7 @@ export default function Home() {
               </CodeContextProvider>
             </div>
         </div>
+        </EditSidebarProvider>
       </InputSidebarProvider>
     </ToastProvider>
   );

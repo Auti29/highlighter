@@ -4,11 +4,11 @@ import {useSnippet} from "../hooks/useSnippet";
 import Heading from "./Heading";
 import useInputSidebar from "@/hooks/useInputSidebar";
 
-const inputSidebarId = document.getElementById("input-sidebar");
+// const inputSidebarId = document.getElementById("input-sidebar");
 
 export default function InputCode() {
     const { snippet, setSnippet } = useSnippet();
-    const {isVisible} = useInputSidebar();
+    // const {isVisible} = useInputSidebar();
     const textAreaRef = useRef(null);
     return (
         <div className={`h-full w-full `}>
