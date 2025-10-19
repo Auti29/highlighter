@@ -2,7 +2,7 @@ import EditOptions from "./EditOptions";
 
 export default function SideBar(){
     return(
-        <div className="md:w-[30%] xl:w-[23%] lg:w-[25%] h-full flex flex-col rounded-md md:hidden lg:block">    
+        <div className="xl:w-[23%] lg:w-[25%] lg:h-full md:w-[95%] flex lg:flex-col rounded-md lg:block md:fixed lg:static z-100   dark:bg-[#151516] md:top-15">    
             <EditOptions />
         </div>
     )

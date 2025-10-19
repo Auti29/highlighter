@@ -17,7 +17,7 @@ export default function CodeOptions(){
                 <HeadingSecondary text={"Editor"}/>
 
                 </div>
-                <div className="ml-3  flex flex-col mt-2 ">
+                <div className="md:ml-2 lg:ml-3 ml-34 flex lg:flex-col mt-2 ">
                     <SelectOptions label={"Language"} values={languages} selected={codeStyles.language} setCodeStyles={setCodeStyles} state={codeStyles}/>
                     <SelectOptions label={"Themes"} values={themes} selected={codeStyles.themes} setCodeStyles={setCodeStyles} state={codeStyles}/>
                     <OptionSelector<CodeInterface> label="LineNos." values={["show", "hide"]} selected={codeStyles.linenumbers} setSelected={setCodeStyles} state={codeStyles}/>

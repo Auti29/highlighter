@@ -33,9 +33,9 @@ export default function OptionSelector<T extends object>({label, values, selecte
 
 
     return (
-        <div className="xl:pl-1 lg:pl-0.5 mb-2.5 font-semibold flex justify-between items-center">
+        <div className="xl:pl-1 lg:pl-0.5 mb-2.5 font-semibold flex justify-between lg:items-center md:flex-col lg:flex-row">
                 <span className="font-semibold text-[13px] text-black dark:text-white">{label}</span>
-                <div className=" flex items-center justify-between py-1 px-2 rounded-md bg-gray-300 text-sm  md:w-30 lg:w-32 xl:w-38 dark:bg-[#232323] ">
+                <div className=" flex items-center justify-center py-1 px-2 rounded-md bg-gray-300 text-sm  md:w-27 lg:w-32 xl:w-38 dark:bg-[#232323] md:mx-1.5 lg:mx-0">
                    {
                     values &&
                     values.map((value: string, index: number) => {

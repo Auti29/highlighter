@@ -20,12 +20,12 @@ export default function SelectOptions({label, values, selected, setCodeStyles, s
     const [dropDown, setDropDown] = useState<boolean>(false);
 
     return(
-        <div className="xl:pl-1 lg:pl-0.5 mb-2.5 font-semibold flex justify-between items-center">
+        <div className="xl:pl-1 lg:pl-0.5 mb-2.5 font-semibold flex justify-between lg:items-center md:flex-col lg:flex-row">
             <span className="font-semibold text-[13px] text-black dark:text-white">{label}</span>
             <div className="relative">
             <div
             onClick={() => setDropDown(prev => !prev)} 
-            className="cursor-pointer flex items-center justify-between py-2 px-2 rounded-md bg-gray-300 text-sm md:w-30 lg:w-32 xl:w-38 dark:bg-[#232323] dark:text-white">
+            className="cursor-pointer flex items-center justify-between py-2 px-2 rounded-md bg-gray-300 text-sm md:w-27 lg:w-32 xl:w-38 dark:bg-[#232323] dark:text-white md:mx-1.5 lg:mx-0">
                     <span className="w-[85%] overflow-clip">{
                             selected
                         }</span>
